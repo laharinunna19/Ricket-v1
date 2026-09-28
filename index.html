@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricket - Code. Play. Score.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="topbar">
+        <div class="logo">
+            <span>🏏</span> RICKET
+        </div>
+
+        <div class="header-right">
+            <button id="homeBtn" class="small-btn">Home</button>
+            <button id="leaderboardBtn" class="small-btn">Leaderboard</button>
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HOME SCREEN
+    ========================== -->
+    <main id="homeScreen" class="screen active">
+
+        <section class="hero">
+
+            <div class="hero-badge">
+                🏏 CODE. PLAY. SCORE.
+            </div>
+
+            <h1>
+                Turn Your Code Into
+                <span>Runs!</span>
+            </h1>
+
+            <p>
+                Choose your language, pick your team and solve coding
+                challenges before the ball gets away!
+            </p>
+
+            <button id="startBtn" class="primary-btn">
+                Start Match 🏏
+            </button>
+
+            <button id="howToBtn" class="secondary-btn">
+                How to Play?
+            </button>
+
+        </section>
+
+        <section class="features">
+
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3>Code</h3>
+                <p>Solve coding challenges against the clock.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏏</div>
+                <h3>Score</h3>
+                <p>Turn your coding performance into cricket runs.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Streak</h3>
+                <p>Build consecutive successful balls.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SETUP SCREEN
+    ========================== -->
+    <main id="setupScreen" class="screen">
+
+        <div class="setup-container">
+
+            <h2>Prepare For The Match 🏏</h2>
+
+            <!-- Player -->
+            <div class="setup-section">
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="Enter your name"
+                    maxlength="20"
+                >
+
+            </div>
+
+
+            <!-- Language -->
+            <div class="setup-section">
+
+                <label>Select Programming Language</label>
+
+                <div class="option-grid language-grid">
+
+                    <button class="language-option" data-language="Python">
+                        <span>🐍</span>
+                        Python
+                    </button>
+
+                    <button class="language-option" data-language="Java">
+                        <span>☕</span>
+                        Java
+                    </button>
+
+                    <button class="language-option" data-language="C++">
+                        <span>⚡</span>
+                        C++
+                    </button>
+
+                    <button class="language-option" data-language="C">
+                        <span>🔵</span>
+                        C
+                    </button>
+
+                    <button class="language-option" data-language="JavaScript">
+                        <span>🟨</span>
+                        JavaScript
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Team -->
+            <div class="setup-section">
+
+                <label>Select Your IPL Team</label>
+
+                <div class="option-grid team-grid">
+
+                    <button class="team-option" data-team="CSK">
+                        <span>🦁</span>
+                        CSK
+                    </button>
+
+                    <button class="team-option" data-team="MI">
+                        <span>💙</span>
+                        MI
+                    </button>
+
+                    <button class="team-option" data-team="RCB">
+                        <span>🔴</span>
+                        RCB
+                    </button>
+
+                    <button class="team-option" data-team="SRH">
+                        <span>🧡</span>
+                        SRH
+                    </button>
+
+                    <button class="team-option" data-team="KKR">
+                        <span>💜</span>
+                        KKR
+                    </button>
+
+                    <button class="team-option" data-team="RR">
+                        <span>💗</span>
+                        RR
+                    </button>
+
+                    <button class="team-option" data-team="DC">
+                        <span>🔵</span>
+                        DC
+                    </button>
+
+                    <button class="team-option" data-team="PBKS">
+                        <span>❤️</span>
+                        PBKS
+                    </button>
+
+                    <button class="team-option" data-team="GT">
+                        <span>🩵</span>
+                        GT
+                    </button>
+
+                    <button class="team-option" data-team="LSG">
+                        <span>💚</span>
+                        LSG
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Difficulty -->
+            <div class="setup-section">
+
+                <label>Select Difficulty</label>
+
+                <div class="difficulty-grid">
+
+                    <button class="difficulty-option" data-difficulty="easy">
+                        🟢 Easy
+                    </button>
+
+                    <button class="difficulty-option" data-difficulty="medium">
+                        🟡 Medium
+                    </button>
+
+                    <button class="difficulty-option" data-difficulty="hard">
+                        🔴 Hard
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button id="continueBtn" class="primary-btn">
+                Continue →
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         TOSS SCREEN
+    ========================== -->
+    <main id="tossScreen" class="screen">
+
+        <div class="toss-container">
+
+            <div class="toss-coin" id="coin">
+                🪙
+            </div>
+
+            <h2>TOSS TIME!</h2>
+
+            <p id="tossMessage">
+                Choose Heads or Tails
+            </p>
+
+            <div class="toss-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="playToss('Heads')"
+                >
+                    Heads
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="playToss('Tails')"
+                >
+                    Tails
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         MATCH SCREEN
+    ========================== -->
+    <main id="matchScreen" class="screen">
+
+        <div class="match-container">
+
+            <!-- Scoreboard -->
+            <section class="scoreboard">
+
+                <div class="team-score">
+
+                    <div class="team-name" id="scoreTeam">
+                        RCB
+                    </div>
+
+                    <div class="score">
+                        <span id="runs">0</span>/<span id="wickets">0</span>
+                    </div>
+
+                    <div class="overs">
+                        <span id="overs">0.0</span> overs
+                    </div>
+
+                </div>
+
+
+                <div class="match-info">
+
+                    <div>
+                        Ball
+                        <strong id="ballNumber">1</strong>/6
+                    </div>
+
+                    <div>
+                        Over
+                        <strong id="overNumber">1</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="streak-box">
+
+                    🔥 Streak
+                    <strong id="streak">0</strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- Question -->
+            <section class="question-card">
+
+                <div class="question-header">
+
+                    <span class="question-number">
+                        Question <span id="questionNumber">1</span>
+                    </span>
+
+                    <span
+                        class="difficulty-badge"
+                        id="difficultyBadge"
+                    >
+                        EASY
+                    </span>
+
+                </div>
+
+
+                <h2 id="questionTitle">
+                    Question
+                </h2>
+
+                <p id="questionDescription">
+                    Description
+                </p>
+
+
+                <div class="examples">
+
+                    <div>
+                        <strong>Input</strong>
+                        <pre id="sampleInput"></pre>
+                    </div>
+
+                    <div>
+                        <strong>Expected Output</strong>
+                        <pre id="sampleOutput"></pre>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Timer -->
+            <section class="timer-section">
+
+                <div class="timer-circle">
+                    <span id="timer">90</span>
+                    <small>SEC</small>
+                </div>
+
+            </section>
+
+
+            <!-- Code editor -->
+            <section class="editor-card">
+
+                <div class="editor-header">
+
+                    <span id="editorLanguage">
+                        Python
+                    </span>
+
+                    <button id="clearBtn">
+                        Clear
+                    </button>
+
+                </div>
+
+                <textarea
+                    id="codeEditor"
+                    spellcheck="false"
+                    placeholder="// Write your solution here..."
+                ></textarea>
+
+                <div class="editor-actions">
+
+                    <button
+                        id="runBtn"
+                        class="secondary-btn"
+                    >
+                        ▶ Run
+                    </button>
+
+                    <button
+                        id="submitBtn"
+                        class="primary-btn"
+                    >
+                        Submit 🏏
+                    </button>
+
+                </div>
+
+                <div id="codeResult" class="code-result hidden"></div>
+
+            </section>
+
+
+            <!-- Last ball result -->
+            <div id="ballResult" class="ball-result hidden">
+
+                <div id="ballEmoji">🏏</div>
+
+                <h2 id="ballResultTitle">
+                    SIX!
+                </h2>
+
+                <p id="ballResultText">
+                    Amazing!
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         OVER BREAK SCREEN
+    ========================== -->
+    <main id="overScreen" class="screen">
+
+        <div class="over-container">
+
+            <div class="big-emoji">
+                🏏
+            </div>
+
+            <h1>END OF OVER!</h1>
+
+            <div class="over-score-card">
+
+                <h2 id="overTeamName">
+                    RCB
+                </h2>
+
+                <div class="big-score">
+                    <span id="overRuns">0</span>/<span id="overWickets">0</span>
+                </div>
+
+                <p>
+                    Over <span id="completedOver">1</span>
+                    completed
+                </p>
+
+            </div>
+
+            <div class="over-stats">
+
+                <div>
+                    <strong id="overSixes">0</strong>
+                    <span>Sixes</span>
+                </div>
+
+                <div>
+                    <strong id="overFours">0</strong>
+                    <span>Fours</span>
+                </div>
+
+                <div>
+                    <strong id="overAccuracy">0%</strong>
+                    <span>Accuracy</span>
+                </div>
+
+            </div>
+
+            <button id="nextOverBtn" class="primary-btn">
+                Next Over →
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         RESULT SCREEN
+    ========================== -->
+    <main id="resultScreen" class="screen">
+
+        <div class="result-container">
+
+            <div class="trophy">
+                🏆
+            </div>
+
+            <h1>Match Over!</h1>
+
+            <p id="resultGreeting">
+                Great match!
+            </p>
+
+
+            <div class="final-score-card">
+
+                <div id="resultTeam">
+                    RCB
+                </div>
+
+                <div class="final-score">
+                    <span id="finalRuns">0</span>/<span id="finalWickets">0</span>
+                </div>
+
+                <p>
+                    <span id="finalOvers">3.0</span> overs
+                </p>
+
+            </div>
+
+
+            <div class="result-stats">
+
+                <div class="result-stat">
+                    <strong id="finalQuestions">0</strong>
+                    <span>Balls</span>
+                </div>
+
+                <div class="result-stat">
+                    <strong id="finalSolved">0</strong>
+                    <span>Solved</span>
+                </div>
+
+                <div class="result-stat">
+                    <strong id="finalAccuracy">0%</strong>
+                    <span>Accuracy</span>
+                </div>
+
+                <div class="result-stat">
+                    <strong id="finalSixes">0</strong>
+                    <span>Sixes</span>
+                </div>
+
+                <div class="result-stat">
+                    <strong id="finalFours">0</strong>
+                    <span>Fours</span>
+                </div>
+
+                <div class="result-stat">
+                    <strong id="finalBestStreak">0</strong>
+                    <span>Best Streak</span>
+                </div>
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <button id="playAgainBtn" class="primary-btn">
+                    Play Again 🏏
+                </button>
+
+                <button id="resultHomeBtn" class="secondary-btn">
+                    Home
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         LEADERBOARD SCREEN
+    ========================== -->
+    <main id="leaderboardScreen" class="screen">
+
+        <div class="leaderboard-container">
+
+            <h1>🏆 Ricket Leaderboard</h1>
+
+            <p>
+                Your best performances
+            </p>
+
+            <div id="leaderboardList"></div>
+
+            <button
+                id="leaderboardHomeBtn"
+                class="secondary-btn"
+            >
+                ← Home
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         HOW TO PLAY MODAL
+    ========================== -->
+    <div id="howToModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="close-btn">
+                ×
+            </button>
+
+            <h2>How To Play 🏏</h2>
+
+            <div class="rules">
+
+                <div>
+                    <strong>1️⃣ Choose</strong>
+                    <p>
+                        Select your programming language,
+                        IPL team and difficulty.
+                    </p>
+                </div>
+
+                <div>
+                    <strong>2️⃣ Code</strong>
+                    <p>
+                        Solve the coding challenge before
+                        the timer runs out.
+                    </p>
+                </div>
+
+                <div>
+                    <strong>3️⃣ Score</strong>
+                    <p>
+                        90–100% → 6 runs<br>
+                        70–89% → 4 runs<br>
+                        40–69% → 2 runs<br>
+                        Below 40% → Dot ball
+                    </p>
+                </div>
+
+                <div>
+                    <strong>4️⃣ Wicket</strong>
+                    <p>
+                        If the timer expires, you lose
+                        your wicket.
+                    </p>
+                </div>
+
+                <div>
+                    <strong>5️⃣ Match</strong>
+                    <p>
+                        Six balls make one over.
+                        Complete three overs to finish
+                        the match.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
